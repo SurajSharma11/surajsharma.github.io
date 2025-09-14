@@ -1,6 +1,7 @@
-
 import { useMemo, useState } from "react";
 import { Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+// Option 2: Robust bundler URL (Vite) for the resume file. Place the .docx at src/assets/
+const resumeURL = new URL('./Suraj_Sharma_DS_Updated.docx', import.meta.url).href;
 
 const DATA = {
   name: "Suraj Sharma",
@@ -102,9 +103,7 @@ const DATA = {
     "Deployment: AWS SageMaker, Azure ML, Docker, Kubernetes, Flask",
     "Data Processing: Hadoop, Spark, H2O.ai",
     "Visualisation: Power BI",
-  ],
-  resumeLink: "/mnt/data/Suraj_Sharma_DS_Updated.docx",
-};
+  ],};
 
 function Section({ title, children }: { title: string; children: any }) {
   return (
@@ -153,7 +152,7 @@ export default function Portfolio() {
             </div>
             <div className="flex items-center gap-3">
               <a
-                href={DATA.resumeLink}
+                href={resumeURL}
                 className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2 text-sm font-semibold shadow-sm hover:shadow"
               >
                 <Download className="h-4 w-4" /> Download CV
